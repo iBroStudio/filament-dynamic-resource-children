@@ -34,6 +34,7 @@ class SkeletonServiceProvider extends PluginServiceProvider
             ->hasMigration('create_skeleton_table')
             ->hasCommand(SkeletonCommand::class);
     }
+
     /*
     public function packageConfiguring(Package $package): void
     {
