@@ -1,11 +1,7 @@
 {
     "name": "ibrostudio/filament-dynamic-resource-children",
-    "description": "This is my package filament-dynamic-resource-children",
-    "keywords": [
-        "iBroStudio",
-        "laravel",
-        "filament-dynamic-resource-children"
-    ],
+    "description": "Allows Filament plugins developer to register pages or relation managers in a resource living at the app level or in an another plugin",
+    "keywords": ["Laravel", "Filament"],
     "homepage": "https://github.com/ibrostudio/filament-dynamic-resource-children",
     "license": "MIT",
     "authors": [
