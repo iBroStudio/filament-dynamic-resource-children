@@ -7,8 +7,8 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use IBroStudio\FilamentDynamicResourceChildren\Tests\Fixtures\Resources\UserResource\Pages;
 use IBroStudio\FilamentDynamicResourceChildren\Concerns\HasDynamicChildren;
+use IBroStudio\FilamentDynamicResourceChildren\Tests\Fixtures\Resources\UserResource\Pages;
 use IBroStudio\FilamentDynamicResourceChildren\Tests\Models\User;
 
 class UserResource extends Resource

@@ -49,16 +49,15 @@ class ChildrenRegistries
         $this->ensureRegistry($key);
 
         foreach ($pages as $name => $page) {
-
-            if ( ! is_array($page) || ! array_key_exists('class', $page) || ! array_key_exists('route', $page)) {
+            if (! is_array($page) || ! array_key_exists('class', $page) || ! array_key_exists('route', $page)) {
                 throw new BadPageParameterException();
             }
 
-            if ( ! class_exists($page['class'])) {
+            if (! class_exists($page['class'])) {
                 throw new ChildMissingException($page['class']);
             }
 
-            if ( ! is_subclass_of($page['class'], Page::class)) {
+            if (! is_subclass_of($page['class'], Page::class)) {
                 throw new InvalidPageException($page['class']);
             }
 
@@ -71,12 +70,11 @@ class ChildrenRegistries
         $this->ensureRegistry($key);
 
         foreach ($relationManagers as $relationManager) {
-
-            if (!class_exists($relationManager)) {
+            if (! class_exists($relationManager)) {
                 throw new ChildMissingException($relationManager);
             }
 
-            if ( ! is_subclass_of($relationManager, RelationManager::class)) {
+            if (! is_subclass_of($relationManager, RelationManager::class)) {
                 throw new InvalidRelationManagerException($relationManager);
             }
 

@@ -1,7 +1,7 @@
 <?php
 
-use IBroStudio\FilamentDynamicResourceChildren\Facades\ChildrenRegistries as ChildrenRegistriesFacade;
 use IBroStudio\FilamentDynamicResourceChildren\ChildrenRegistries;
+use IBroStudio\FilamentDynamicResourceChildren\Facades\ChildrenRegistries as ChildrenRegistriesFacade;
 use IBroStudio\FilamentDynamicResourceChildren\Tests\Fixtures\Resources\UserResource\Pages\ExamplePage;
 use IBroStudio\FilamentDynamicResourceChildren\Tests\Fixtures\Resources\UserResource\Pages\ExamplePage2;
 use IBroStudio\FilamentDynamicResourceChildren\Tests\Fixtures\Resources\UserResource\Pages\ExamplePage3;
@@ -22,19 +22,19 @@ test('instance is a singleton', function () {
 });
 
 it('get a registry')
-    ->expect(fn() => ChildrenRegistriesFacade::getRegistry('test'))
+    ->expect(fn () => ChildrenRegistriesFacade::getRegistry('test'))
     ->toBeInstanceOf(Collection::class);
 
 it('get registries')
-    ->expect(fn() => ChildrenRegistriesFacade::getRegistries())
+    ->expect(fn () => ChildrenRegistriesFacade::getRegistries())
     ->toBeInstanceOf(Collection::class);
 
 it('get pages')
-    ->expect(fn() => ChildrenRegistriesFacade::getPages('test'))
+    ->expect(fn () => ChildrenRegistriesFacade::getPages('test'))
     ->toBeInstanceOf(Collection::class);
 
 it('get relation managers')
-    ->expect(fn() => ChildrenRegistriesFacade::getRelationManagers('test'))
+    ->expect(fn () => ChildrenRegistriesFacade::getRelationManagers('test'))
     ->toBeInstanceOf(Collection::class);
 
 it('add pages', function () {
@@ -43,22 +43,22 @@ it('add pages', function () {
     ChildrenRegistriesFacade::addPages([
         'test' => [
             'class' => ExamplePage::class,
-            'route' => '/example'
+            'route' => '/example',
         ],
         'test2' => [
             'class' => ExamplePage2::class,
-            'route' => '/example2'
+            'route' => '/example2',
         ],
         'test3' => [
             'class' => ExamplePage3::class,
-            'route' => '/example3'
+            'route' => '/example3',
         ],
     ], 'resource');
 
-ChildrenRegistriesFacade::addPages([
+    ChildrenRegistriesFacade::addPages([
         'test' => [
             'class' => ExamplePage3::class,
-            'route' => '/example3'
+            'route' => '/example3',
         ],
     ], 'otherresource');
 
@@ -68,15 +68,15 @@ ChildrenRegistriesFacade::addPages([
                 'pages' => [
                     'test' => [
                         'class' => ExamplePage::class,
-                        'route' => '/example'
+                        'route' => '/example',
                     ],
                     'test2' => [
                         'class' => ExamplePage2::class,
-                        'route' => '/example2'
+                        'route' => '/example2',
                     ],
                     'test3' => [
                         'class' => ExamplePage3::class,
-                        'route' => '/example3'
+                        'route' => '/example3',
                     ],
                 ],
                 'relations' => [],
@@ -85,11 +85,11 @@ ChildrenRegistriesFacade::addPages([
                 'pages' => [
                     'test' => [
                         'class' => ExamplePage3::class,
-                        'route' => '/example3'
+                        'route' => '/example3',
                     ],
                 ],
                 'relations' => [],
-            ]
+            ],
         ]);
 });
 
@@ -121,6 +121,6 @@ it('add relation mangers', function () {
                 'relations' => [
                     TestRelationManager3::class,
                 ],
-            ]
+            ],
         ]);
 });

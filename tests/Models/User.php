@@ -28,10 +28,10 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasMany(Post::class, 'author_id');
     }
-/*
-    protected static function newFactory()
-    {
-        return UserFactory::new();
-    }
-    */
+    /*
+        protected static function newFactory()
+        {
+            return UserFactory::new();
+        }
+        */
 }

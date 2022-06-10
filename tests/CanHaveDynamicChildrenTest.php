@@ -6,11 +6,11 @@ use IBroStudio\FilamentDynamicResourceChildren\Tests\Fixtures\Resources\UserReso
 use Illuminate\Support\Collection;
 
 it('can define registry key')
-    ->expect(fn() => UserResource::getRegistryKey())
+    ->expect(fn () => UserResource::getRegistryKey())
     ->toBe('userresource');
 
 it('can retrieve a registry')
-    ->expect(fn() => UserResource::getChildrenRegistry())
+    ->expect(fn () => UserResource::getChildrenRegistry())
     ->toBeInstanceOf(Collection::class);
 
 it('add dynamic page', function () {
@@ -19,7 +19,7 @@ it('add dynamic page', function () {
     UserResource::addDynamicPages([
         'test' => [
             'class' => ExamplePage::class,
-            'route' => '/example'
+            'route' => '/example',
         ],
     ]);
 
@@ -32,14 +32,14 @@ it('get dynamic page', function () {
     UserResource::addDynamicPages([
         'test' => [
             'class' => ExamplePage::class,
-            'route' => '/example'
+            'route' => '/example',
         ],
     ]);
 
     expect(UserResource::getDynamicPages())->toMatchArray([
         'test' => [
             'class' => ExamplePage::class,
-            'route' => '/example'
+            'route' => '/example',
         ],
     ]);
 });

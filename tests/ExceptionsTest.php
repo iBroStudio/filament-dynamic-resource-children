@@ -18,7 +18,7 @@ it('fails when adding dynamic page when its parameter is not an array', function
 it('fails when adding dynamic page when class parameter is missing', function () {
     ChildrenRegistries::addPages([
         'test' => [
-            'route' => '/example'
+            'route' => '/example',
         ],
     ], 'resource');
 })->throws(BadPageParameterException::class, 'Bad parameters: page submitted to registry has to provide an array parameters with a "class" and a "route" keys');
@@ -35,14 +35,14 @@ it('fails when adding dynamic page with a missing child class', function () {
     ChildrenRegistries::addPages([
         'test' => [
             'class' => 'InexistantClass',
-            'route' => '/example'
+            'route' => '/example',
         ],
     ], 'resource');
 })->throws(ChildMissingException::class, 'Child InexistantClass does not exist');
 
 it('fails when adding dynamic relation manager with a missing child class', function () {
     ChildrenRegistries::addRelationManagers([
-        'InexistantClass'
+        'InexistantClass',
     ], 'resource');
 })->throws(ChildMissingException::class, 'Child InexistantClass does not exist');
 
@@ -50,13 +50,13 @@ it('fails when adding dynamic page with an invalid child class', function () {
     ChildrenRegistries::addPages([
         'test' => [
             'class' => InvalidPage::class,
-            'route' => '/example'
+            'route' => '/example',
         ],
     ], 'resource');
 })->throws(InvalidPageException::class, 'InvalidPage is not a valid Page class');
 
 it('fails when adding dynamic relation manager with an invalid child class', function () {
     ChildrenRegistries::addRelationManagers([
-        InvalidRelationManager::class
+        InvalidRelationManager::class,
     ], 'resource');
 })->throws(InvalidRelationManagerException::class, 'InvalidRelationManager is not a valid RelationManager class');

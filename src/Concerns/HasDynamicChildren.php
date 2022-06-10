@@ -6,8 +6,8 @@ use IBroStudio\FilamentDynamicResourceChildren\Facades\ChildrenRegistries;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
-trait HasDynamicChildren {
-
+trait HasDynamicChildren
+{
     public static function addDynamicPages(array $routes): void
     {
         ChildrenRegistries::addPages($routes, self::getRegistryKey());
