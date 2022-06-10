@@ -19,7 +19,7 @@ class ChildrenRegistries
         $this->registries = collect();
     }
 
-    public function addRegistry($key)
+    public function addRegistry($key): void
     {
         $this->registries->put($key, collect([
             'pages' => collect(),
@@ -60,7 +60,7 @@ class ChildrenRegistries
             if (! is_subclass_of($page['class'], Page::class)) {
                 throw new InvalidPageException($page['class']);
             }
-
+            /* @phpstan-ignore-next-line */
             $this->registries[$key]['pages']->put($name, $page['class']::route($page['route']));
         }
     }

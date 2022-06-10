@@ -9,7 +9,5 @@ class ChildrenRegistries extends Facade
     protected static function getFacadeAccessor()
     {
         return 'children-registries';
-
-        return \IBroStudio\FilamentDynamicResourceChildren\ChildrenRegistries::class;
     }
 }
